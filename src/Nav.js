@@ -11,9 +11,9 @@ const Nav = () => {
                 <img src={logo} alt="logo"/>
                 </div>
             <ul className="float-right mr-10 lg:flex leading-[80px] space-x-4 text-black uppercase rounded fixed lg:relative h-[100vh] lg:h-0 w-[100%] lg:w-fit top-20 lg:top-0 left-[-100%] lg:left-0 transition-all duration-300 lg:transition-none text-center bg-white">
-                <li><Link to="/">Login</Link></li>
-                <li><Link to="/orders">Orders</Link></li>
+                <li><Link to="/">Orders</Link></li>
                 <li><Link to="/products">Products</Link></li>
+                <li><Link to="/feedback">Feedbacks</Link></li>
 
             </ul>
         </nav>      

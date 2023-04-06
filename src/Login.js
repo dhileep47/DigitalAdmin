@@ -13,7 +13,7 @@ const Login = () => {
         <label className="font-bold">Email address</label>
         <input className="ml-4 p-2 rounded-[0.4rem] border" name="email" type="email" ></input>
         <label className="font-bold">Password</label>
-        <input className="ml-4 p-2 rounded-[0.4rem] border"type="text" name="password" ></input>
+        <input className="ml-4 p-2 rounded-[0.4rem] border"type="password" name="password" ></input>
         <div className="flex justify-center mt-8">
               <button className="bg-black hover:bg-white text-white hover:text-black border hover:border-black  px-8 py-2 rounded-full ml-14">Login</button>
             </div>
