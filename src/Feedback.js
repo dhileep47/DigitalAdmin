@@ -1,6 +1,7 @@
 import 'firebase/firestore';
 import db from "./Firebase";
 
+
 import React, {useState,useEffect} from "react";
 import { collection, deleteDoc, doc,getDocs } from "firebase/firestore";
 
@@ -8,10 +9,12 @@ import { collection, deleteDoc, doc,getDocs } from "firebase/firestore";
 
 
 const Feedback = () => {
-    //Ref variable
+
     
     const [data,setData] = useState();
+
     const deleteFeed= async(id)=>{
+
         const feedDoc=doc(db,"Feedback",id);
         await deleteDoc(feedDoc);
         const getFeed = async()=>{
@@ -32,20 +35,18 @@ const Feedback = () => {
         };
         getFeed();
     },[]);
-    console.log(data);
 
    
     return ( 
         <div className="grid justify-center mx-auto">
         {data && data.map((element)=>
-    <div key={element.id} className="flex flex-col justify-between p-4 leading-normal border">
-        
+    <div key={element.id} className="flex flex-col mb-2 justify-between p-4 leading-normal border">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{element.Msg}</h5>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">by {element.Name}</p>
-        <div className="flex justify-end">
-        <button className="bg-black hover:bg-white text-white hover:text-black border hover:border-black  px-8 py-2 rounded-full">Reply</button>
+        <div className="flex justify-center gap-3">
+        <a href={`https://mail.google.com/mail/u/0/?view=cm&to=${element.Mail}`} className="bg-black hover:bg-white text-white hover:text-black border hover:border-black  px-3 py-1 rounded-full" target='new'>Reply</a>
         <button onClick={()=> { deleteFeed(element.id);
-        }} className="bg-black hover:bg-white text-white hover:text-black border hover:border-black  px-8 py-2 rounded-full">Delete</button>      
+        }} className="bg-black hover:bg-white text-white hover:text-black border hover:border-black  px-3 py-1 rounded-full">Delete</button>      
         </div>
         
         
